@@ -135,6 +135,14 @@ GEM
     diff-lcs (1.5.0)
     discard (1.2.1)
       activerecord (>= 4.2, < 8)
+    elastic-transport (8.1.0)
+      faraday (< 3)
+      multi_json
+    elasticsearch (8.5.2)
+      elastic-transport (~> 8)
+      elasticsearch-api (= 8.5.2)
+    elasticsearch-api (8.5.2)
+      multi_json
     erubi (1.11.0)
     execjs (2.8.1)
     factory_bot (6.2.1)
@@ -142,6 +150,10 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
+    faraday (2.7.2)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.2)
     ffaker (2.21.0)
     ffi (1.15.5)
     font-awesome-rails (4.7.0.8)
@@ -154,6 +166,7 @@ GEM
       execjs (~> 2.0)
       sprockets (>= 2.0.0)
       tilt (>= 1.2)
+    hashie (5.0.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -215,6 +228,7 @@ GEM
     money (6.16.0)
       i18n (>= 0.6.4, <= 2)
     msgpack (1.6.0)
+    multi_json (1.15.0)
     net-imap (0.3.3)
       date
       net-protocol
@@ -331,6 +345,7 @@ GEM
     ruby-progressbar (1.11.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -340,6 +355,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    searchkick (5.1.1)
+      activemodel (>= 5.2)
+      hashie
     selenium-webdriver (4.7.1)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -460,6 +478,7 @@ DEPENDENCIES
   capybara-screenshot (~> 1.0)
   database_cleaner (~> 1.7)
   debug
+  elasticsearch
   factory_bot (>= 4.8)
   factory_bot_rails
   ffaker (~> 2.13)
@@ -475,6 +494,7 @@ DEPENDENCIES
   rubocop-performance (~> 1.5)
   rubocop-rails (~> 2.3)
   rubocop-rspec (~> 2.0)
+  searchkick
   selenium-webdriver
   solidus_api (~> 3.2)
   solidus_auth_devise

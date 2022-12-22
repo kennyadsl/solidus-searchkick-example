@@ -98,3 +98,6 @@ group :development, :test do
 end
 
 gem "solidus_auth_devise"
+
+gem "searchkick"
+gem "elasticsearch"
