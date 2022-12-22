@@ -24,6 +24,11 @@ class ProductsController < StoreController
     @taxon = Spree::Taxon.find(params[:taxon_id]) if params[:taxon_id]
   end
 
+  def autocomplete
+    @products = Spree::Product.search(params[:keywords], fields: [{name: :word_start}], limit: 10)
+    render layout: false
+  end
+
   private
 
   def accurate_title

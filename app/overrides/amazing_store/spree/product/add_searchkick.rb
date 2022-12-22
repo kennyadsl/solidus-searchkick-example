@@ -4,7 +4,7 @@ module AmazingStore
       module AddSearchkick
         def self.prepended(base)
           unless base.respond_to?(:searchkick_index)
-            base.searchkick
+            base.searchkick word_start: [:name]
           end
         end
 

@@ -1,0 +1,15 @@
+<ul class="autocomplete-results__list" data-controller="search-results" data-search-results-current-class="autocomplete-results__item--current">
+  <% if @products.any? %>
+    <% @products.each do |product| %>
+      <li class="autocomplete-results__item" data-search-results-target="result">
+        <%= link_to product.name, product_path(product) %>
+      </li>
+    <% end %>
+
+    <li class="autocomplete-results__item" data-search-results-target="result">
+      <%= link_to "See all results", products_path(keywords: params[:keywords]) %>
+    </li>
+  <% else %>
+    <li class="autocomplete-results__item autocomplete-results__item--empty">No results</li>
+  <% end %>
+</ul>

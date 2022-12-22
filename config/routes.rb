@@ -38,7 +38,11 @@ Rails.application.routes.draw do
 
   resource :account, controller: 'users'
 
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show] do
+    collection do
+      get :autocomplete
+    end
+  end
 
   resources :cart_line_items, only: :create
 
